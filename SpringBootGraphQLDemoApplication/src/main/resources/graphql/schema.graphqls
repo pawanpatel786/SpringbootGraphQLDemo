@@ -1,0 +1,34 @@
+
+type Query{
+
+allBooks:[BookInfo]
+
+getBook(id: ID!): BookInfo
+
+
+}
+
+type Mutation {
+
+addBookByParameter(name: String!, author: String!, publisher: String!,price: Float!): String!
+addBookByObject(book: BookInput!): BookInfo!
+updateBook(id : ID!, book: BookInput!): BookInfo
+
+}
+
+type BookInfo {
+    id : ID
+    name : String
+    author: String
+    publisher: String
+    price: Float
+    language: String
+}
+
+input BookInput {
+    name : String
+    author: String
+    publisher: String
+    price: Float
+}
+
